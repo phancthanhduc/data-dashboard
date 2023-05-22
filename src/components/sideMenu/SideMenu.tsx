@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -70,11 +70,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 const menuRouteList = ["", "data", "profile", "settings", ""];
 const menuListTranslations = ["Home", "Data", "Profile", "Settinngs", "Sign Out"];
 const menuListIcons = [
-    <HomeIcon />,
-    <EqualizerIcon />,
-    <Person2Icon />,
-    <SettingsIcon />,
-    <ExitToAppIcon />,
+    <HomeIcon key={1} />,
+    <EqualizerIcon key={2} />,
+    <Person2Icon key={3} />,
+    <SettingsIcon key={4} />,
+    <ExitToAppIcon key={5} />,
 ];
 
 function SideMenu() {
@@ -89,7 +89,6 @@ function SideMenu() {
             window.removeEventListener("scroll", onScroll);
         };
     }, []);
-    const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const mobileCheck = useMediaQuery("(min-width: 600px)");
 

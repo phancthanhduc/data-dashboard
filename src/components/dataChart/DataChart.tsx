@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Chart, registerables } from "chart.js";
 import { darkOptions, ligthOptions } from "@src/components/dataChart/Themes";
 import { ChartConfiguration } from "chart.js/dist/types";
